@@ -1,0 +1,31 @@
+:root {
+  --bg-lightgray: rgba(240, 240, 240, 1);
+  --white: rgba(255, 255, 255, 1);
+  --light-white: rgba(235, 249, 242, 1);
+  --black: rgba(0, 0, 0, 1);
+  --gray-text: rgba(92, 92, 92, 1);
+  --dark-gray-text: rgba(63, 61, 61, 1);
+  --light-gray: rgba(221, 221, 221, 1);
+  --accent-green: rgba(40, 217, 121, 1);
+  --dark-green: rgba(20, 144, 99, 1);
+  --most-recent-bg: rgba(126, 115, 18, 0.4);
+  --most-recent-text: rgba(221, 241, 99, 1);
+  --textarea-border: rgb(198, 118, 234);
+}
+
+textarea {
+  z-index: 11;
+}
+
+textarea.editing {
+  box-sizing: border-box;
+  background: none;
+  color: currentColor;
+  outline: none;
+  border: 2px solid var(--textarea-border);
+  box-shadow: 0 0 10px 0 var(--textarea-border);
+  border-radius: 0.3vw;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}

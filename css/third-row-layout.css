@@ -1,0 +1,207 @@
+.bottom-row-wrapper {
+  grid-area: bottom-row;
+  display: grid;
+  grid-template-columns: 4fr 13fr;
+  gap: 2vw;
+  width: 100%;
+  align-items: stretch;
+}
+
+.tools-section {
+  background-color: var(--bg-lightgray);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  font-size: clamp(16px, 2vw, 42px);
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .tools-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2vw;
+  }
+
+  article {
+    width: 15vw;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: var(--white);
+    gap: 1vw;
+
+    h4 {
+      position: absolute;
+      font-weight: 400;
+      z-index: 10;
+      top: -0.8em;
+      display: block;
+      padding: 0.3em 1em;
+      width: max-content;
+      color: var(--white);
+      background-color: var(--black);
+      font-size: 0.5em;
+      border-radius: 50px;
+      text-align: center;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .tools-list {
+      box-sizing: border-box;
+      padding: 0.5em;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      flex-wrap: wrap;
+      gap: 2vw;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+
+      img {
+        width: 1.9em;
+      }
+    }
+  }
+}
+
+.experience-section {
+  background-color: var(--bg-lightgray);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  font-size: clamp(16px, 2vw, 42px);
+  width: 100%;
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .experience-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2vw;
+    min-width: 100%;
+
+    .experience-block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+
+      .experience-block-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          max-width: 70%;
+          font-weight: 500;
+          font-size: 0.8em;
+        }
+
+        .most-recent-tag {
+          font-size: 0.6em;
+          background-color: var(--most-recent-bg);
+          color: var(--most-recent-text);
+          border-radius: 1em;
+          padding: 0.3em 1em;
+        }
+      }
+
+      .experience-block-content {
+        display: grid;
+        grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+        gap: 1vw;
+
+        ul {
+          margin-left: 2vw;
+          list-style-type: disc;
+          font-size: clamp(16px, 2vw, 42px);
+
+          li {
+            max-width: 98%;
+            text-wrap: wrap;
+            font-size: 0.7em;
+            font-weight: 400;
+          }
+        }
+
+        .experience-name-career {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+
+          .experience-company {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 100%;
+
+            span {
+              max-width: 100%;
+              font-weight: 400;
+              font-size: 0.7em;
+            }
+          }
+
+          h4 {
+            width: 100%;
+            max-width: unset !important;
+            text-wrap: nowrap;
+            font-weight: 500;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+
+    .exp-block-standard {
+      background-color: var(--white);
+      color: var(--black);
+
+      .experience-company span {
+        color: var(--dark-gray-text);
+      }
+
+      .experience-company span:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        border-right: 1px solid var(--dark-gray-text);
+        height: 0.8em;
+        margin: 0 0.8em;
+        vertical-align: middle;
+      }
+    }
+
+    .exp-block-recent {
+      background-color: var(--accent-green);
+      color: var(--white);
+
+      .experience-company span {
+        color: var(--light-white);
+      }
+
+      .experience-company span:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        border-right: 1px solid var(--light-white);
+        height: 0.8em;
+        margin: 0 0.8em;
+        vertical-align: middle;
+      }
+    }
+  }
+}
