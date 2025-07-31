@@ -1,0 +1,306 @@
+@import 'portfolio-layout.css';
+@import 'theme.css';
+@import 'first-row-layout.css';
+@import 'add-fonts.css';
+@import 'second-row-layout.css';
+@import 'third-row-layout.css';
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
+}
+
+.square-block {
+  box-sizing: border-box;
+  background-color: var(--bg-lightgray);
+  border-radius: 3rem;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-height: 0;
+  min-width: 0;
+  aspect-ratio: 1/1;
+  max-height: 100%;
+}
+
+.rectangle-block {
+  box-sizing: border-box;
+  border-radius: 3rem;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: 100%;
+}
+
+.main-block-padding {
+  padding: 2vw;
+}
+
+.child-block-padding {
+  padding: 1.5vw;
+}
+
+.overflow-ellipsis {
+  display: block;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+  #portfolioLayoutGrid {
+    max-width: 96vw;
+    margin: 1.5vw 2vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      'avatar-and-name interests'
+      'education languages'
+      'bottom-row bottom-row'
+      'footer footer';
+    gap: 3vw;
+  }
+
+  .avatar-name-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 3vw;
+
+    .short-description-div {
+      font-size: clamp(14px, 2.5vw, 42px);
+
+      .name-work-wrapper {
+        letter-spacing: 0.2em;
+      }
+
+      h2 {
+        letter-spacing: 0.4em;
+        font-size: 1em;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .education-section {
+    font-size: clamp(14px, 2vw, 42px);
+
+    .edu-favorite-block,
+    .edu-block {
+      overflow: clip;
+      aspect-ratio: auto;
+      height: auto;
+    }
+  }
+
+  .tools-section {
+    font-size: clamp(14px, 2vw, 42px);
+
+    article {
+      width: 25vw;
+    }
+
+    img {
+      width: 4vw !important;
+    }
+  }
+
+  .languages-section {
+    height: 45%;
+  }
+
+  .extra-section {
+    grid-template-rows: auto auto;
+    gap: 3vw;
+  }
+
+  .download-btn-footer {
+    width: 100%;
+
+    button {
+      display: flex;
+      width: 40%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .main-block-padding {
+    padding: 20px;
+  }
+
+  .child-block-padding {
+    padding: 15px;
+  }
+
+  .square-block,
+  .rectangle-block {
+    border-radius: 35px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #portfolioLayoutGrid {
+    display: grid;
+    max-width: 98vw;
+    margin: 1vh 3vw 10vh 3vw;
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto
+      auto
+      auto
+      auto
+      auto
+      auto;
+    grid-template-areas:
+      'avatar-and-name'
+      'languages'
+      'education'
+      'interests'
+      'bottom-row'
+      'footer';
+    gap: 3vw !important;
+    justify-content: center;
+  }
+
+  .avatar-name-section {
+    grid-area: avatar-and-name;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    box-sizing: border-box;
+    gap: 3vw;
+
+    div {
+      width: 100%;
+      aspect-ratio: auto !important;
+    }
+
+    .short-description-div {
+      font-size: clamp(14px, 3.5vw, 42px);
+      align-items: start;
+
+      span {
+        font-size: 1.2em;
+      }
+    }
+
+    .name-work-wrapper {
+      font-size: 1.5em;
+      align-items: start !important;
+    }
+  }
+
+  .languages-section {
+    grid-area: languages;
+  }
+
+  .education-section {
+    grid-area: education;
+    padding: 0 2vw;
+    font-size: clamp(14px, 3.5vw, 42px);
+
+    .edu-blocks-wrapper {
+      font-size: 0.8em;
+      gap: 3vw;
+    }
+  }
+
+  .extra-section {
+    grid-area: interests;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .bottom-row-wrapper {
+    grid-area: bottom-row;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .tools-section {
+    .tools-block-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 2vw;
+    }
+
+    article {
+      width: auto;
+      min-width: 80px;
+      flex: 1 1 auto;
+    }
+
+    .tools-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+      gap: 1vw;
+      padding: 0.5em;
+    }
+  }
+
+  .download-btn-footer {
+    width: 100%;
+
+    button {
+      display: flex;
+      width: 50%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .main-block-padding {
+    padding: 25px;
+  }
+
+  .child-block-padding {
+    padding: 20px;
+  }
+
+  .square-block,
+  .rectangle-block {
+    border-radius: 35px !important;
+  }
+}
