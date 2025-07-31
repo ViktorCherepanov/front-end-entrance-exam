@@ -1,5 +1,4 @@
-import './js/pdf-loader.js';
-import { setupPdfDownload } from './pdf-loader.js';
+import { setupPdfDownload } from '/js/pdf-loader.js';
 
 function findEditableElements(root) {
   return root.querySelectorAll(
